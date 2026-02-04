@@ -1,0 +1,22 @@
+{
+  "name": "sheyanov-av/calculator",
+  "description": "Console game calculator (Task01)",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "wp-cli/php-cli-tools": "^0.11 || ^0.12"
+  },
+  "autoload": {
+    "files": [
+      "src/Controller.php",
+      "src/View.php"
+    ]
+  },
+  "bin": [
+    "bin/calculator"
+  ],
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^4.0"
+  }
+}

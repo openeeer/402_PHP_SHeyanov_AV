@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',        
+    __DIR__ . '/../../../autoload.php',         
+];
+
+foreach ($autoloadPaths as $autoloadPath) {
+    if (file_exists($autoloadPath)) {
+        require $autoloadPath;
+        break;
+    }
+}
+
+if (!function_exists('SHeyanov_AV\\Calculator\\Controller\\startGame')) {
+    fwrite(STDERR, "Autoload not found. Install dependencies with Composer.\n");
+    exit(1);
+}
+
+use function SHeyanov_AV\Calculator\Controller\startGame;
+
+startGame();
