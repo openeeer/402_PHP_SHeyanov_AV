@@ -1,0 +1,261 @@
+:root {
+    --bg-dark: #111824;
+    --bg-mid: #1a273c;
+    --panel: #21324c;
+    --panel-light: #2c4262;
+    --text-main: #f3f5f8;
+    --text-dim: #c9d4e5;
+    --accent: #f9bb6a;
+    --ok: #7ff3af;
+    --bad: #ff8ca3;
+    --warning: #ffd58f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", "Verdana", sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(249, 187, 106, 0.12), transparent 42%),
+        radial-gradient(circle at 80% 90%, rgba(127, 243, 175, 0.09), transparent 40%),
+        linear-gradient(180deg, var(--bg-mid), var(--bg-dark));
+    color: var(--text-main);
+}
+
+.page {
+    width: min(1024px, 92vw);
+    margin: 2rem auto 3rem;
+}
+
+.panel {
+    margin-bottom: 1rem;
+    padding: 1rem 1.15rem;
+    background: linear-gradient(180deg, var(--panel-light), var(--panel));
+    border: 2px solid #0d1522;
+    outline: 2px solid #45648f;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.35),
+        5px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.header-panel h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+.subtle {
+    margin: 0.45rem 0 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+h2 {
+    margin: 0 0 0.8rem;
+    color: var(--accent);
+    font-size: 1.12rem;
+}
+
+h3 {
+    margin: 0.7rem 0 0.4rem;
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.expression {
+    margin: 0.1rem 0 0.9rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.field {
+    margin-bottom: 0.75rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.22rem;
+    color: var(--text-dim);
+    font-size: 0.94rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.52rem 0.62rem;
+    border: 2px solid #0f1827;
+    outline: 1px solid #4a6d9d;
+    background: #162338;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: 2px solid var(--accent);
+}
+
+.retro-btn {
+    padding: 0.55rem 0.95rem;
+    border: 2px solid #100a18;
+    outline: 1px solid #ffcf71;
+    background: linear-gradient(180deg, #ffd88e, #f5ad3c);
+    color: #2b1a01;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.retro-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.table-btn {
+    padding: 0.35rem 0.62rem;
+    font-size: 0.86rem;
+}
+
+.panel-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.55rem;
+}
+
+.panel-title-row h2 {
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.2rem;
+    background: rgba(0, 0, 0, 0.13);
+}
+
+th,
+td {
+    border: 2px solid #152238;
+    padding: 0.45rem 0.5rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    color: var(--accent);
+    background: rgba(249, 187, 106, 0.1);
+    font-weight: 700;
+}
+
+.inline-code {
+    color: #f9dc93;
+}
+
+.notice {
+    margin: 0.8rem 0 0;
+    padding: 0.5rem 0.6rem;
+    border: 2px solid #100a18;
+}
+
+.notice-warning {
+    background: rgba(255, 213, 143, 0.2);
+    color: var(--warning);
+}
+
+.notice-success {
+    background: rgba(127, 243, 175, 0.14);
+    color: var(--ok);
+}
+
+.status-ok {
+    color: var(--ok);
+}
+
+.status-bad {
+    color: var(--bad);
+}
+
+.result-list p {
+    margin: 0.35rem 0;
+}
+
+.steps-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.steps-list li {
+    margin-bottom: 0.4rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 860px) {
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.38rem 0.4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .page {
+        width: min(100%, 96vw);
+        margin-top: 1rem;
+    }
+
+    .panel {
+        padding: 0.9rem;
+    }
+
+    .panel-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .panel-title-row .retro-btn {
+        width: 100%;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        border: 2px solid #152238;
+        margin-bottom: 0.7rem;
+        background: rgba(0, 0, 0, 0.13);
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #152238;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+}
+

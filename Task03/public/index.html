@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task03 - Калькулятор (SPA)</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page">
+    <header class="panel header-panel">
+        <h1>Игра «Калькулятор»</h1>
+        <p class="subtle">Task03: SPA + REST API + Slim + SQLite</p>
+    </header>
+
+    <section class="panel">
+        <h2>Новая игра</h2>
+        <form id="new-game-form">
+            <div class="field">
+                <label for="player-name">Имя игрока</label>
+                <input id="player-name" name="player_name" required>
+            </div>
+            <button class="retro-btn" type="submit">Начать игру</button>
+        </form>
+        <p id="global-notice" class="notice hidden"></p>
+    </section>
+
+    <section id="current-game-panel" class="panel hidden">
+        <h2>Текущая игра</h2>
+        <p class="subtle">Вычислите выражение</p>
+        <p id="current-expression" class="expression inline-code"></p>
+        <form id="step-form">
+            <div class="field">
+                <label for="user-answer">Ваш ответ</label>
+                <input id="user-answer" name="user_answer" required>
+            </div>
+            <button class="retro-btn" type="submit">Отправить ход</button>
+        </form>
+        <div id="step-result" class="result-list"></div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-title-row">
+            <h2>История игр</h2>
+            <button id="refresh-history" class="retro-btn" type="button">Обновить</button>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата</th>
+                <th>Игрок</th>
+                <th>Выражение</th>
+                <th>Ходов</th>
+                <th>Статус</th>
+                <th>Детали</th>
+            </tr>
+            </thead>
+            <tbody id="history-body">
+            <tr>
+                <td colspan="7">Загрузка...</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="details-panel" class="panel hidden">
+        <h2>Детали игры</h2>
+        <div id="details-content"></div>
+    </section>
+</div>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
+
